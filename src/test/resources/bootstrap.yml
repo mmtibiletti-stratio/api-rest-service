@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: {APP_NAME}
+  profiles:
+    active: ${SRV_PROFILE}
+  cloud:
+    config:
+      label: ${SRV_LABEL}
+      profile: ${SRV_PROFILE}
+      enabled: true
+      uri: ${SRV_SERV_CONF}
+  sleuth:
+    sampler:
+      percentage: 0
+
+security:
+  ignored: /swagger-ui.html, /webjars/**, /swagger-resources/**, /v2/api-docs
+
+eureka:
+ client:
+   enabled: false
